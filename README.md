@@ -1,4 +1,4 @@
-# 🌐 Portfolio — Roland A. Myaka
+# 🌐 Portfolio — Roland Aksanti Myaka
 
 Portfolio professionnel **Roland A. Myaka** — Développeur Web Full-Stack, Expert IA & Tuteur d'anglais.
 
