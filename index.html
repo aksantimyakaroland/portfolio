@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <!-- ================================================
+       META & SEO
+  ================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Roland A. Myaka — Développeur Web Full-Stack, Expert en Intelligence Artificielle et Tuteur d'anglais. Spécialiste React, Node.js, PHP. Disponible en freelance."/>
+  <meta name="keywords" content="développeur web, expert IA, tuteur anglais, React, Node.js, PHP, freelance, portfolio, Roland Myaka"/>
+  <meta name="author" content="Roland A. Myaka"/>
+  <meta property="og:title" content="Roland A. Myaka — Développeur Web & Expert IA"/>
+  <meta property="og:description" content="Développeur Web Full-Stack, Expert IA & Polyglotte. Construisons quelque chose d'extraordinaire ensemble."/>
+  <meta property="og:type" content="website"/>
+  <title>Roland A. Myaka — Développeur Web & Expert IA</title>
+
+  <!-- ================================================
+       GOOGLE FONTS
+       Poppins  → titres (bold, distinctif)
+       DM Sans  → corps de texte (lisible, moderne)
+       JetBrains Mono → code / badges techniques
+  ================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ================================================
+       CURSEUR PERSONNALISÉ (desktop)
+  ================================================ -->
+  <div class="cursor"        id="cursor"></div>
+  <div class="cursor-trail"  id="cursorTrail"></div>
+
+  <!-- ================================================
+       LOADER PAGE
+  ================================================ -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-box">
+      <span class="loader-initials">R<em>.</em>M</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       NAVIGATION
+  ================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <a href="#hero" class="nav-logo">R<mark>.</mark>Myaka</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"    class="nav-link">À propos</a></li>
+        <li><a href="#skills"   class="nav-link">Compétences</a></li>
+        <li><a href="#projects" class="nav-link">Projets</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <!-- ── Toggle Jour / Nuit ────────────────── -->
+        <button class="theme-btn" id="themeToggle" aria-label="Basculer le thème">
+          <!-- LUNE (affichée en mode clair → click = passer en sombre) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                  stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <!-- SOLEIL (affichée en mode sombre → click = passer en clair) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="1"  x2="12" y2="3"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22"  y1="4.22"  x2="5.64"  y2="5.64"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="1"  y1="12" x2="3"  y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22"  y1="19.78" x2="5.64"  y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <!-- Hamburger mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#about"    class="mob-link">À propos</a></li>
+        <li><a href="#skills"   class="mob-link">Compétences</a></li>
+        <li><a href="#projects" class="mob-link">Projets</a></li>
+        <li><a href="#contact"  class="mob-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       SECTION 1 — HERO
+  ================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"  aria-hidden="true"></div>
+    <div class="hero-bg-glow"  aria-hidden="true"></div>
+
+    <div class="hero-inner">
+
+      <!-- ── Texte gauche ─────────────────────────── -->
+      <div class="hero-text">
+
+        <p class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Disponible pour missions freelance
+        </p>
+
+        <h1 class="hero-name">
+          Roland A.<br>
+          <span class="name-accent">Myaka</span>
+        </h1>
+
+        <!-- Typing effect -->
+        <div class="hero-typing-wrap">
+          <span class="typing-prefix">Je suis&nbsp;</span>
+          <span class="typing-word" id="typingWord"></span>
+          <span class="typing-cursor" aria-hidden="true">|</span>
+        </div>
+
+        <p class="hero-pitch">
+          Je conçois et développe des applications web <strong>élégantes, robustes et intelligentes</strong> —
+          du pixel parfait à l'API optimisée. Fort d'une triple expertise en développement,
+          intelligence artificielle et communication multilingue, je transforme vos idées
+          en produits numériques qui marquent les esprits.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="cta-primary">
+            Voir mes projets
+            <svg viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12M12 6l4 4-4 4"
+                    stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#contact" class="cta-ghost">Me contacter</a>
+        </div>
+
+        <!-- Langues -->
+        <div class="lang-strip">
+          <span class="lang-pill">🇫🇷 Français</span>
+          <span class="lang-pill">🇬🇧 English</span>
+          <span class="lang-pill">🇰🇪 Swahili</span>
+          <span class="lang-pill">🇪🇸 Español</span>
+        </div>
+      </div>
+
+      <!-- ── Photo droite ──────────────────────────── -->
+      <div class="hero-visual">
+        <div class="avatar-scene">
+          <div class="avatar-ring r1"></div>
+          <div class="avatar-ring r2"></div>
+          <!--
+            ════════════════════════════════════════════
+            VOTRE PHOTO EST ICI.
+            Pour mettre votre vraie photo :
+              1. Copiez votre image dans le dossier images/
+              2. Renommez-la en "photo.jpg" (ou .png / .webp)
+              3. Remplacez le <img> ci-dessous par :
+                 <img src="images/VOTRE_PHOTO.jpg" alt="Roland A. Myaka" class="avatar-photo"/>
+            ════════════════════════════════════════════
+          -->
+          <img
+            src="images/photo.jpg"
+            alt="Roland A. Myaka — Photo de profil"
+            class="avatar-photo"
+            loading="eager"
+          />
+          <!-- Badges flottants -->
+          <div class="float-chip fc-tl">⚡ Dev full-stack</div>
+          <div class="float-chip fc-tr">🤖 Expert IA</div>
+          <div class="float-chip fc-bl">🌍 4 Langues</div>
+        </div>
+      </div>
+
+    </div><!-- /hero-inner -->
+
+    <!-- Flèche scroll -->
+    <a href="#about" class="scroll-hint" aria-label="Défiler">
+      <div class="scroll-wheel"></div>
+    </a>
+  </section>
+
+  <!-- ================================================
+       SECTION 2 — À PROPOS
+  ================================================ -->
+  <section class="section" id="about">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <span class="sec-label">01 — À propos</span>
+        <h2 class="sec-title">Qui suis-je ?</h2>
+      </header>
+
+      <div class="about-layout">
+
+        <!-- Photo about -->
+        <div class="about-img-col reveal anim-left">
+          <!--
+            Pour remplacer : <img src="images/about.jpg" alt="Roland au travail" class="about-photo" loading="lazy"/>
+          -->
+          <img src="images/photo.jpg" alt="Roland A. Myaka" class="about-photo" loading="lazy"/>
+          <!-- Carte statistiques -->
+          <div class="about-stat-card">
+            <div class="stat-item">
+              <strong>2+</strong>
+              <span>Ans d'expérience</span>
+            </div>
+            <div class="stat-div"></div>
+            <div class="stat-item">
+              <strong>06+</strong>
+              <span>Projets livrés</span>
+            </div>
+            <div class="stat-div"></div>
+            <div class="stat-item">
+              <strong>4</strong>
+              <span>Langues parlées</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Texte about -->
+        <div class="about-text-col reveal anim-right">
+          <h3 class="about-sub">Développeur. Expert IA. Polyglotte.</h3>
+
+          <p class="about-p">
+            Passionné de technologie depuis toujours, j'ai bâti une expertise solide en
+            <strong>développement web full-stack</strong> — maîtrisant aussi bien la conception
+            d'interfaces utilisateurs soignées (HTML, CSS, JavaScript, React) que l'architecture
+            de systèmes backend robustes (Node.js, PHP, bases de données relationnelles et NoSQL).
+          </p>
+          <p class="about-p">
+            Convaincu que l'<strong>Intelligence Artificielle</strong> redéfinit les standards du
+            numérique, j'intègre des modèles comme ChatGPT et Claude dans les workflows de mes
+            clients pour automatiser les processus, générer du contenu intelligent et offrir des
+            expériences utilisateurs de nouvelle génération.
+          </p>
+          <p class="about-p">
+            Polyglotte natif — français, anglais, swahili, espagnol — je suis également
+            <strong>tuteur d'anglais</strong> certifié, accompagnant étudiants et professionnels
+            vers une communication fluide et confiante dans un monde globalisé.
+          </p>
+
+          <blockquote class="about-quote">
+            "Le code est un langage universel.<br/>Moi, j'en parle quatre de plus."
+          </blockquote>
+
+          <!-- Timeline carrière -->
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <span class="tl-year">2023</span>
+                <span class="tl-event">Lancement des premiers projets web freelance</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <span class="tl-year">2024</span>
+                <span class="tl-event">Spécialisation React, Node.js &amp; architecture REST</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <span class="tl-year">2025</span>
+                <span class="tl-event">Premiers projets professionnels et Intégration IA dans les projets clients &amp; automatisation</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <span class="tl-year">2026+</span>
+                <span class="tl-event">Expert IA reconnu &amp; tuteur d'anglais en parallèle</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       SECTION 3 — COMPÉTENCES (logos SVG officiels inline)
+  ================================================ -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <span class="sec-label">02 — Compétences</span>
+        <h2 class="sec-title">Mon expertise</h2>
+      </header>
+
+      <!-- Barres de compétences par catégorie -->
+      <div class="skills-cats">
+
+        <!-- FRONTEND -->
+        <div class="skill-cat reveal">
+          <h3 class="cat-title"><span class="cat-icon">🎨</span> Frontend</h3>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <span>HTML / CSS</span><span>95%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="95"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>JavaScript (ES6+)</span><span>88%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="88"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>React</span><span>82%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="82"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BACKEND -->
+        <div class="skill-cat reveal">
+          <h3 class="cat-title"><span class="cat-icon">⚙️</span> Backend</h3>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <span>Node.js</span><span>80%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="80"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>PHP</span><span>75%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="75"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>SQL / NoSQL</span><span>78%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="78"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IA & OUTILS -->
+        <div class="skill-cat reveal">
+          <h3 class="cat-title"><span class="cat-icon">🤖</span> IA &amp; Outils</h3>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <span>ChatGPT / Claude</span><span>92%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="92"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>Git / GitHub</span><span>85%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="85"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>Netlify / Vercel</span><span>88%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="88"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LANGUES -->
+        <div class="skill-cat reveal">
+          <h3 class="cat-title"><span class="cat-icon">🌍</span> Langues &amp; Tutorat</h3>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <span>Français (natif)</span><span>100%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="100"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>Anglais (courant)</span><span>90%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="90"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>Swahili / Español</span><span>80%</span>
+              <div class="bar-track"><div class="bar-fill" data-w="80"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /skills-cats -->
+
+      <!-- ── Logos officiels SVG inline ─────────────────────────────────── -->
+      <div class="tech-logos reveal">
+        <p class="tech-logos-title">Technologies maîtrisées</p>
+        <div class="logos-grid">
+
+          <!-- HTML5 -->
+          <div class="logo-item" title="HTML5">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 3l1.96 22.04L16 28l9.04-2.96L27 3H5z" fill="#E44D26"/>
+              <path d="M16 25.92l7.32-2.03 1.68-18.89H16v20.92z" fill="#F16529"/>
+              <path d="M11.2 13h4.8V10.4H8.4l.28 3.2 7.12 7.12v-3.04L11.6 14l-.4-1zM12 19.6l-.32-3.6H9l.56 6.28L16 24.32v-3.04l-4-.68z" fill="#EBEBEB"/>
+              <path d="M16 13h4.4l-.44 4.88L16 19.6v3.04l4.72-1.32.64-7.52H16V13zM16 10.4h7.28l.24-2.8H16v2.8z" fill="#fff"/>
+            </svg>
+            <span>HTML5</span>
+          </div>
+
+          <!-- CSS3 -->
+          <div class="logo-item" title="CSS3">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 3l1.96 22.04L16 28l9.04-2.96L27 3H5z" fill="#1572B6"/>
+              <path d="M16 25.92l7.32-2.03 1.68-18.89H16v20.92z" fill="#33A9DC"/>
+              <path d="M16 13.6h-4.56l-.32-3.2H16V7.6H8.4l.84 9.6H16v-3.6zM16 20.52l-.04.012-3.84-1.04-.24-2.72H9l.48 5.36L16 24.32v-3.8z" fill="#EBEBEB"/>
+              <path d="M16 13.6v3.6h4.24l-.4 4.28-3.84 1.04v3.8l6.96-1.92.08-.92.96-10.88.1-1.1H16zM16 7.6v2.8h8.2l.24-2.8H16z" fill="#fff"/>
+            </svg>
+            <span>CSS3</span>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="logo-item" title="JavaScript">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="4" fill="#F7DF1E"/>
+              <path d="M9.16 25.28l2.2-1.33c.42.74.8 1.37 1.72 1.37.88 0 1.43-.34 1.43-1.68v-9.1h2.7v9.13c0 2.77-1.62 4.03-3.99 4.03-2.14 0-3.38-1.1-4.06-2.42zM18.08 25l2.2-1.27c.58.95 1.33 1.65 2.66 1.65 1.12 0 1.83-.56 1.83-1.33 0-.92-.73-1.25-1.97-1.79l-.68-.29c-1.95-.83-3.25-1.87-3.25-4.07 0-2.02 1.54-3.56 3.95-3.56 1.71 0 2.94.6 3.83 2.16l-2.1 1.35c-.46-.83-.96-1.16-1.73-1.16-.79 0-1.29.5-1.29 1.16 0 .81.5 1.14 1.67 1.64l.68.29c2.3.99 3.6 2 3.6 4.27 0 2.45-1.92 3.76-4.5 3.76-2.52 0-4.15-1.2-4.94-2.81z" fill="#333"/>
+            </svg>
+            <span>JavaScript</span>
+          </div>
+
+          <!-- React -->
+          <div class="logo-item" title="React">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="2.8" fill="#61DAFB"/>
+              <ellipse cx="16" cy="16" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5"/>
+              <ellipse cx="16" cy="16" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5" transform="rotate(60 16 16)"/>
+              <ellipse cx="16" cy="16" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5" transform="rotate(120 16 16)"/>
+            </svg>
+            <span>React</span>
+          </div>
+
+          <!-- Node.js -->
+          <div class="logo-item" title="Node.js">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 3L4 9.5v13L16 29l12-6.5v-13L16 3z" fill="#3C873A"/>
+              <path d="M16 3v26M4 9.5l12 6.5 12-6.5" stroke="#fff" stroke-width="0.5" opacity="0.2"/>
+              <text x="16" y="19" text-anchor="middle" font-family="monospace" font-weight="700" font-size="7.5" fill="#fff">JS</text>
+            </svg>
+            <span>Node.js</span>
+          </div>
+
+          <!-- PHP -->
+          <div class="logo-item" title="PHP">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="16" cy="16" rx="14" ry="7" fill="#8892BF"/>
+              <text x="16" y="20" text-anchor="middle" font-family="monospace" font-weight="800" font-size="9" fill="#fff">php</text>
+            </svg>
+            <span>PHP</span>
+          </div>
+
+          <!-- MySQL -->
+          <div class="logo-item" title="MySQL">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 4C9.6 4 5 7.58 5 12v8c0 4.42 4.6 8 11 8s11-3.58 11-8v-8c0-4.42-4.6-8-11-8z" fill="#00758F"/>
+              <ellipse cx="16" cy="12" rx="11" ry="5" fill="#F29111"/>
+              <text x="16" y="15.5" text-anchor="middle" font-family="monospace" font-weight="700" font-size="6" fill="#fff">MySQL</text>
+            </svg>
+            <span>MySQL</span>
+          </div>
+
+          <!-- MongoDB -->
+          <div class="logo-item" title="MongoDB">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 4c-1.6 4.5-6.5 8-6.5 13.5 0 3.6 2.9 6.5 6.5 6.5s6.5-2.9 6.5-6.5C22.5 12 17.6 8.5 16 4z" fill="#4DB33D"/>
+              <rect x="15.1" y="20" width="1.8" height="8" rx="0.9" fill="#6CAC48"/>
+            </svg>
+            <span>MongoDB</span>
+          </div>
+
+          <!-- Git -->
+          <div class="logo-item" title="Git">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M29.47 14.53L17.47 2.53a1.8 1.8 0 00-2.55 0l-2.54 2.54 3.22 3.22a2.14 2.14 0 012.72 2.72l3.1 3.1a2.14 2.14 0 11-1.29 1.29l-2.9-2.9v7.62a2.14 2.14 0 11-1.76-.08V12.3a2.14 2.14 0 01-1.16-2.8L11.1 6.3 2.53 14.88a1.8 1.8 0 000 2.55l12 12a1.8 1.8 0 002.55 0l12.39-12.39a1.8 1.8 0 000-2.51z" fill="#F05032"/>
+            </svg>
+            <span>Git</span>
+          </div>
+
+          <!-- GitHub -->
+          <div class="logo-item" title="GitHub">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M16 3C8.82 3 3 8.82 3 16c0 5.75 3.73 10.63 8.9 12.35.65.12.89-.28.89-.62v-2.17c-3.62.79-4.38-1.74-4.38-1.74-.59-1.5-1.44-1.9-1.44-1.9-1.18-.8.09-.79.09-.79 1.3.09 1.99 1.34 1.99 1.34 1.16 1.98 3.04 1.41 3.78 1.08.12-.84.45-1.41.82-1.73-2.88-.33-5.91-1.44-5.91-6.41 0-1.42.51-2.57 1.34-3.48-.13-.33-.58-1.65.13-3.43 0 0 1.09-.35 3.58 1.34a12.43 12.43 0 016.5 0c2.49-1.69 3.58-1.34 3.58-1.34.71 1.78.26 3.1.13 3.43.83.91 1.34 2.06 1.34 3.48 0 4.98-3.03 6.07-5.92 6.4.47.4.88 1.19.88 2.4v3.56c0 .35.23.75.89.62C25.27 26.62 29 21.74 29 16c0-7.18-5.82-13-13-13z"
+                fill="currentColor"/>
+            </svg>
+            <span>GitHub</span>
+          </div>
+
+          <!-- Netlify -->
+          <div class="logo-item" title="Netlify">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.8 13.6l-1.4-1.4-6.4 6.4 6.4 6.4 1.4-1.4-5-5 5-5z" fill="#05BDBA"/>
+              <path d="M12.2 18.4l1.4 1.4 6.4-6.4-6.4-6.4-1.4 1.4 5 5-5 5z" fill="#014847"/>
+              <rect x="6" y="15" width="4" height="2" rx="1" fill="#05BDBA"/>
+              <rect x="22" y="15" width="4" height="2" rx="1" fill="#05BDBA"/>
+            </svg>
+            <span>Netlify</span>
+          </div>
+
+          <!-- Vercel -->
+          <div class="logo-item" title="Vercel">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 5L29 27H3L16 5z" fill="currentColor"/>
+            </svg>
+            <span>Vercel</span>
+          </div>
+
+          <!-- ChatGPT -->
+          <div class="logo-item" title="ChatGPT">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="13" stroke="#10A37F" stroke-width="1.8"/>
+              <path d="M9 16a7 7 0 0114 0" stroke="#10A37F" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M16 9v14" stroke="#10A37F" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="3" fill="#10A37F"/>
+            </svg>
+            <span>ChatGPT</span>
+          </div>
+
+          <!-- Claude AI -->
+          <div class="logo-item" title="Claude AI">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="13" fill="#CC785C" opacity="0.15"/>
+              <path d="M10 21l3-9 3 9M10 21h6M13 13l3 8" stroke="#CC785C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19 12h2.5c1.5 0 2.5 1 2.5 2.5S23 17 21.5 17H19v5" stroke="#CC785C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Claude AI</span>
+          </div>
+
+        </div><!-- /logos-grid -->
+      </div><!-- /tech-logos -->
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- ================================================
+       SECTION 4 — PROJETS
+  ================================================ -->
+  <section class="section" id="projects">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <span class="sec-label">03 — Projets</span>
+        <h2 class="sec-title">Mes réalisations</h2>
+      </header>
+
+      <div class="projects-grid">
+
+        <!-- ── PROJET 1 ─────────────────────────────── -->
+        <!--
+          Pour chaque projet, remplacez :
+          • "images/projet-X.svg" par votre vraie image
+          • href="#" des liens par vos URLs réelles
+          • Le titre, la description, les tags
+        -->
+        <article class="proj-card reveal">
+          <div class="proj-img-wrap">
+            <div class="proj-placeholder" style="--ph:#007BFF">
+              <span>01</span>
+            </div>
+            <div class="proj-overlay">
+              <a href="https://github.com/aksantimyakaroland/bukavutourism.git" target="_blank" rel="noopener" class="proj-btn">🔗 Voir live</a>
+              <a href="https://github.com/aksantimyakaroland/bukavutourism.git" target="_blank" rel="noopener" class="proj-btn">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="proj-tag">HTML/CSS</span>
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">Netlify Forms</span>
+            </div>
+            <h3 class="proj-title">Site de Voyage Bukavu Tourism</h3>
+            <p class="proj-desc">
+              Application web full-stack avec authentification sécurisée, tableau de bord
+              interactif, gestion d'utilisateurs et API REST performante. Architecture
+              microservices, interface responsive et design épuré.
+            </p>
+          </div>
+        </article>
+
+        <!-- ── PROJET 2 ─────────────────────────────── -->
+        <article class="proj-card reveal">
+          <div class="proj-img-wrap">
+            <div class="proj-placeholder" style="--ph:#6C63FF">
+              <span>02</span>
+            </div>
+            <div class="proj-overlay">
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">🔗 Voir live</a>
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="proj-tag">React</span>
+              <span class="proj-tag">Firebase</span>
+              <span class="proj-tag">Vite</span>
+              <span class="proj-tag">Auth</span>
+              <span class="proj-tag">Firestore</span>
+              <span class="proj-tag">Cloud Storage</span>
+            </div>
+            <h3 class="proj-title">Organize – Gestion intelligente de documents académiques</h3>
+            <p class="proj-desc">
+              Application web moderne permettant aux étudiants de centraliser, organiser et sécuriser leurs documents académiques, avec authentification Firebase, gestion dynamique des fichiers et interface responsive optimisée.
+            </p>
+          </div>
+        </article>
+
+        <!-- ── PROJET 3 ─────────────────────────────── -->
+        <article class="proj-card reveal">
+          <div class="proj-img-wrap">
+            <div class="proj-placeholder" style="--ph:#00C49A">
+              <span>03</span>
+            </div>
+            <div class="proj-overlay">
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">🔗 Voir live</a>
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="proj-tag">React</span>
+              <span class="proj-tag">Firebase</span>
+              <span class="proj-tag">Vite</span>
+              <span class="proj-tag">Auth</span>
+              <span class="proj-tag">Firestore</span>
+              <span class="proj-tag">UI/UX</span>
+            </div>
+            <h3 class="proj-title">Soma – Bibliothèque digitale de créations étudiante</h3>
+            <p class="proj-desc">
+              Plateforme web permettant aux étudiants de publier et découvrir des œuvres littéraires, avec système de badges basé sur l’engagement, gestion de contenu dynamique et authentification sécurisée.
+            </p>
+          </div>
+        </article>
+
+        <!-- ── PROJET 4 ─────────────────────────────── -->
+        <article class="proj-card reveal">
+          <div class="proj-img-wrap">
+            <div class="proj-placeholder" style="--ph:#FF6B6B">
+              <span>04</span>
+            </div>
+            <div class="proj-overlay">
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">🔗 Voir live</a>
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">CSS</span>
+              <span class="proj-tag">HTML</span>
+            </div>
+            <h3 class="proj-title">Purpose – Site marketing de l’écosystème</h3>
+            <p class="proj-desc">
+              Landing page professionnelle destinée à promouvoir une suite d’applications, avec structure orientée conversion, navigation fluide et mise en valeur des produits et de la mission.
+            </p>
+          </div>
+        </article>
+
+        <!-- ── PROJET 5 ─────────────────────────────── -->
+        <article class="proj-card reveal">
+          <div class="proj-img-wrap">
+            <div class="proj-placeholder" style="--ph:#F59E0B">
+              <span>05</span>
+            </div>
+            <div class="proj-overlay">
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">🔗 Voir live</a>
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="proj-tag">React</span>
+              <span class="proj-tag">Node.js</span>
+              <span class="proj-tag">REST API</span>
+            </div>
+            <h3 class="proj-title">Dashboard analytique</h3>
+            <p class="proj-desc">
+              Tableau de bord temps réel pour une startup africaine : visualisation de métriques
+              clés, rapports exportables, alertes automatiques. Connecté à plusieurs sources de
+              données via API.
+            </p>
+          </div>
+        </article>
+
+        <!-- ── PROJET 6 ─────────────────────────────── -->
+        <article class="proj-card reveal">
+          <div class="proj-img-wrap">
+            <div class="proj-placeholder" style="--ph:#8B5CF6">
+              <span>06</span>
+            </div>
+            <div class="proj-overlay">
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">🔗 Voir live</a>
+              <a href="#" target="_blank" rel="noopener" class="proj-btn">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">API REST</span>
+              <span class="proj-tag">CSS3</span>
+            </div>
+            <h3 class="proj-title">Portfolio interactif client</h3>
+            <p class="proj-desc">
+              Portfolio premium développé pour un photographe professionnel : galerie avec
+              filtres dynamiques, mode lightbox, formulaire de réservation intégré et optimisation
+              SEO complète. Performance Lighthouse 98/100.
+            </p>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ================================================
+       SECTION 5 — CONTACT (formulaire Netlify)
+  ================================================ -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <span class="sec-label">04 — Contact</span>
+        <h2 class="sec-title">Travaillons ensemble</h2>
+      </header>
+
+      <div class="contact-layout">
+
+        <!-- ── Infos contact gauche ─────────────────── -->
+        <div class="contact-info reveal anim-left">
+          <p class="contact-intro">
+            Vous avez un projet web, besoin d'intégrer l'IA dans votre entreprise,
+            ou souhaitez prendre des cours d'anglais ? Je suis disponible et réactif.
+            Parlons-en !
+          </p>
+
+          <ul class="contact-links">
+            <!--
+              Remplacez les href par vos vrais liens :
+              • WhatsApp  : https://wa.me/243970604954
+              • LinkedIn  : https://linkedin.com/in/VOTRE_PROFIL
+              • GitHub    : https://github.com/VOTRE_USERNAME
+              • Email     : mailto:aksantimyakaroland@gmail.com
+            -->
+            <li>
+              <a href="https://wa.me/243970604954" target="_blank" rel="noopener" class="contact-link whatsapp">
+                <span class="cl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.48-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51-.17-.01-.37-.01-.57-.01s-.52.07-.79.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.08-.13-.28-.2-.58-.35zM12 2a10 10 0 0 1 8.66 14.99L22 22l-5.14-1.35A10 10 0 1 1 12 2z"/></svg>
+                </span>
+                WhatsApp
+                <span class="cl-arrow">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/roland-aksanti-myaka-4a7a41342?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="contact-link linkedin">
+                <span class="cl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </span>
+                LinkedIn
+                <span class="cl-arrow">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/aksantimyakaroland" target="_blank" rel="noopener" class="contact-link github">
+                <span class="cl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </span>
+                GitHub
+                <span class="cl-arrow">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:aksantimyakaroland@gmail.com" class="contact-link email">
+                <span class="cl-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                aksantimyakaroland@gmail.com
+                <span class="cl-arrow">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── Formulaire Netlify droite ────────────── -->
+        <div class="contact-form-col reveal anim-right">
+          <!--
+            ════════════════════════════════════════════
+            FORMULAIRE NETLIFY
+            Les attributs data-netlify="true" et name="contact"
+            sont obligatoires pour que Netlify intercepte le formulaire.
+            Aucune configuration supplémentaire requise après déploiement.
+            ════════════════════════════════════════════
+          -->
+          <form
+            class="contact-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/merci.html"
+            id="contactForm"
+          >
+            <!-- Champ honeypot anti-spam (caché) -->
+            <input type="hidden" name="form-name" value="contact"/>
+            <p class="hidden" style="display:none;">
+              <label>Ne pas remplir : <input name="bot-field"/></label>
+            </p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nom complet <span class="req">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Jean Dupont" required/>
+              </div>
+              <div class="form-group">
+                <label for="email">Adresse email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="jean@exemple.com" required/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <select id="subject" name="subject">
+                <option value="">Choisir un sujet…</option>
+                <option value="Projet web">💻 Projet web</option>
+                <option value="Intégration IA">🤖 Intégration IA</option>
+                <option value="Tutorat anglais">🇬🇧 Tutorat anglais</option>
+                <option value="Autre">💬 Autre</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span class="req">*</span></label>
+              <textarea id="message" name="message" rows="6"
+                placeholder="Décrivez votre projet, vos besoins ou votre question…"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit" id="submitBtn">
+              <span class="submit-text">Envoyer le message</span>
+              <svg class="submit-arrow" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10h12M12 6l4 4-4 4"
+                      stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <!-- Message de succès (affiché par JS si besoin) -->
+            <div class="form-success" id="formSuccess" style="display:none;">
+              ✅ Merci ! Votre message a été envoyé. Je vous réponds sous 24h.
+            </div>
+          </form>
+        </div>
+
+      </div><!-- /contact-layout -->
+    </div>
+  </section>
+
+  <!-- ================================================
+       FOOTER
+  ================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo">Roland <mark>Aksanti </mark>Myaka</p>
+      <p class="footer-copy">
+        © <span id="year"></span> Roland A. Myaka — Tous droits réservés.
+      </p>
+      <p class="footer-made">
+        Conçu &amp; développé avec ❤️ par Roland Myaka
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bouton retour en haut -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <svg viewBox="0 0 20 20" fill="none">
+      <path d="M10 16V4M4 10l6-6 6 6"
+            stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
