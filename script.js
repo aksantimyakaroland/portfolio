@@ -349,7 +349,7 @@ if (contactForm) {
 
     // Note : si vous voulez tester localement sans Netlify,
     // décommentez les lignes ci-dessous pour simuler l'envoi AJAX :
-    /*
+    
     e.preventDefault();
     setTimeout(() => {
       contactForm.reset();
@@ -362,7 +362,7 @@ if (contactForm) {
         if (formSuccess) formSuccess.style.display = 'none';
       }, 6000);
     }, 1200);
-    */
+    
   });
 }
 
