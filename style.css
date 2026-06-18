@@ -1,28 +1,6 @@
-/* ====================================================
-   STYLE.CSS — Portfolio Roland A. Myaka
-   Structure :
-   1. Variables CSS (thèmes jour/nuit)
-   2. Reset & base
-   3. Loader
-   4. Curseur personnalisé
-   5. Navbar
-   6. Hero
-   7. Sections communes
-   8. À propos
-   9. Compétences (barres + logos)
-   10. Projets
-   11. Contact & formulaire
-   12. Footer
-   13. Back to top
-   14. Animations & utilitaires
-   15. Responsive (tablette + mobile)
-==================================================== */
-
-/* ====================================================
-   1. VARIABLES CSS — THÈMES
-==================================================== */
+/* 1. VARIABLES CSS — THÈMES */
 :root {
-  /* — Couleurs Jour — */
+
   --bg:          #FFFFFF;
   --bg-alt:      #F7F8FC;
   --bg-card:     #FFFFFF;
@@ -36,23 +14,23 @@
   --shadow:      0 4px 32px rgba(0,0,0,0.08);
   --shadow-lg:   0 16px 64px rgba(0,0,0,0.12);
 
-  /* — Typographie — */
+
   --font-title: 'Poppins', sans-serif;
   --font-body:  'DM Sans', sans-serif;
   --font-mono:  'JetBrains Mono', monospace;
 
-  /* — Espacements — */
+
   --section-gap: 120px;
   --container:   1200px;
   --radius:      16px;
   --radius-sm:   8px;
 
-  /* — Transitions — */
+
   --ease:        cubic-bezier(0.4, 0, 0.2, 1);
   --dur:         0.3s;
 }
 
-/* Thème NUIT */
+
 [data-theme="dark"] {
   --bg:          #0D0D0D;
   --bg-alt:      #161616;
@@ -68,9 +46,7 @@
   --shadow-lg:   0 16px 64px rgba(0,0,0,0.6);
 }
 
-/* ====================================================
-   2. RESET & BASE
-==================================================== */
+/* 2. RESET & BASE */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -101,9 +77,7 @@ ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 input, textarea, select { font-family: var(--font-body); }
 
-/* ====================================================
-   3. LOADER PAGE
-==================================================== */
+/* 3. LOADER PAGE */
 .page-loader {
   position: fixed;
   inset: 0;
@@ -151,9 +125,7 @@ input, textarea, select { font-family: var(--font-body); }
   to { width: 100%; }
 }
 
-/* ====================================================
-   4. CURSEUR PERSONNALISÉ
-==================================================== */
+/* 4. CURSEUR PERSONNALISÉ */
 .cursor {
   position: fixed;
   width: 10px;
@@ -181,9 +153,7 @@ input, textarea, select { font-family: var(--font-body); }
 .cursor.hovered { width: 20px; height: 20px; }
 .cursor-trail.hovered { width: 56px; height: 56px; opacity: 0.2; }
 
-/* ====================================================
-   5. NAVBAR
-==================================================== */
+/* 5. NAVBAR */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -207,7 +177,6 @@ input, textarea, select { font-family: var(--font-body); }
   gap: 32px;
 }
 
-/* Logo */
 .nav-logo {
   font-family: var(--font-title);
   font-weight: 800;
@@ -223,7 +192,6 @@ input, textarea, select { font-family: var(--font-body); }
   color: var(--accent);
 }
 
-/* Liens desktop */
 .nav-links {
   display: flex;
   gap: 8px;
@@ -242,10 +210,8 @@ input, textarea, select { font-family: var(--font-body); }
   background: var(--bg-alt);
 }
 
-/* Droite nav */
 .nav-right { display: flex; align-items: center; gap: 12px; }
 
-/* Toggle thème */
 .theme-btn {
   width: 40px;
   height: 40px;
@@ -267,7 +233,6 @@ input, textarea, select { font-family: var(--font-body); }
 [data-theme="dark"]  .icon-moon { display: none; }
 [data-theme="dark"]  .icon-sun  { display: block; }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -292,7 +257,6 @@ input, textarea, select { font-family: var(--font-body); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Menu mobile */
 .mobile-menu {
   display: none;
   position: absolute;
@@ -322,9 +286,7 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .mob-link:hover { color: var(--accent); }
 
-/* ====================================================
-   6. HERO
-==================================================== */
+/* 6. HERO */
 .hero {
   min-height: 100dvh;
   display: flex;
@@ -378,7 +340,6 @@ input, textarea, select { font-family: var(--font-body); }
   align-items: center;
 }
 
-/* Texte héro */
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -411,7 +372,6 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .name-accent { color: var(--accent); }
 
-/* Typing effect */
 .hero-typing-wrap {
   display: flex;
   align-items: center;
@@ -442,7 +402,6 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .hero-pitch strong { color: var(--text); font-weight: 600; }
 
-/* Boutons CTA */
 .hero-actions {
   display: flex;
   gap: 16px;
@@ -491,7 +450,6 @@ input, textarea, select { font-family: var(--font-body); }
   transform: translateY(-2px);
 }
 
-/* Badges langues */
 .lang-strip {
   display: flex;
   flex-wrap: wrap;
@@ -510,7 +468,6 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .lang-pill:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Visuel avatar */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -535,7 +492,6 @@ input, textarea, select { font-family: var(--font-body); }
 .r2 { inset: 20px; animation-direction: reverse; animation-duration: 30s; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Photo de profil */
 .avatar-photo {
   position: absolute;
   inset: 40px;
@@ -549,7 +505,6 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .avatar-photo:hover { transform: scale(1.02); }
 
-/* Badges flottants */
 .float-chip {
   position: absolute;
   background: var(--bg-card);
@@ -571,7 +526,6 @@ input, textarea, select { font-family: var(--font-body); }
   to   { transform: translateY(-10px); }
 }
 
-/* Scroll hint */
 .scroll-hint {
   position: absolute;
   bottom: 32px;
@@ -597,9 +551,7 @@ input, textarea, select { font-family: var(--font-body); }
   100% { transform: translateY(6px);  opacity: 0; }
 }
 
-/* ====================================================
-   7. SECTIONS COMMUNES
-==================================================== */
+/* 7. SECTIONS COMMUNES */
 .section {
   padding: var(--section-gap) 40px;
   background: var(--bg);
@@ -611,7 +563,6 @@ input, textarea, select { font-family: var(--font-body); }
   margin: 0 auto;
 }
 
-/* En-tête de section */
 .section-head {
   margin-bottom: 72px;
   text-align: center;
@@ -635,9 +586,7 @@ input, textarea, select { font-family: var(--font-body); }
   line-height: 1.1;
 }
 
-/* ====================================================
-   8. À PROPOS
-==================================================== */
+/* 8. À PROPOS */
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -645,7 +594,6 @@ input, textarea, select { font-family: var(--font-body); }
   align-items: start;
 }
 
-/* Colonne image */
 .about-img-col { position: relative; }
 
 .about-photo {
@@ -657,7 +605,6 @@ input, textarea, select { font-family: var(--font-body); }
   box-shadow: var(--shadow-lg);
 }
 
-/* Carte stats flottante */
 .about-stat-card {
   position: absolute;
   bottom: -24px;
@@ -683,7 +630,6 @@ input, textarea, select { font-family: var(--font-body); }
 .stat-item span { font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; }
 .stat-div { width: 1px; height: 36px; background: var(--border); }
 
-/* Texte about */
 .about-sub {
   font-family: var(--font-title);
   font-size: 1.5rem;
@@ -713,7 +659,6 @@ input, textarea, select { font-family: var(--font-body); }
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
-/* Timeline */
 .timeline { display: flex; flex-direction: column; gap: 0; }
 .tl-item {
   display: flex;
@@ -742,12 +687,9 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .tl-event { font-size: 0.9rem; color: var(--text-muted); font-weight: 400; }
 
-/* ====================================================
-   9. COMPÉTENCES — BARRES + LOGOS
-==================================================== */
+/* 9. COMPÉTENCES — BARRES + LOGOS */
 .skills-section { background: var(--bg-alt); }
 
-/* Grille catégories */
 .skills-cats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -819,7 +761,6 @@ input, textarea, select { font-family: var(--font-body); }
   transition: width 1.2s var(--ease);
 }
 
-/* Logos tech */
 .tech-logos { text-align: center; }
 .tech-logos-title {
   font-family: var(--font-title);
@@ -871,9 +812,7 @@ input, textarea, select { font-family: var(--font-body); }
 [data-theme="light"] .logo-item svg { color: #111; }
 [data-theme="dark"]  .logo-item svg { color: #f5f5f5; }
 
-/* ====================================================
-   10. PROJETS
-==================================================== */
+/* 10. PROJETS */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -889,7 +828,6 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .proj-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
 
-/* Image / placeholder projet */
 .proj-img-wrap {
   position: relative;
   overflow: hidden;
@@ -912,10 +850,6 @@ input, textarea, select { font-family: var(--font-body); }
   opacity: 0.25;
 }
 
-/* Pour mettre une vraie image :
-   remplacez .proj-placeholder par :
-   <img src="images/projet-X.jpg" class="proj-img" loading="lazy"/>
-*/
 .proj-img {
   width: 100%;
   height: 100%;
@@ -925,7 +859,6 @@ input, textarea, select { font-family: var(--font-body); }
 .proj-card:hover .proj-img,
 .proj-card:hover .proj-placeholder { transform: scale(1.06); }
 
-/* Overlay au survol */
 .proj-overlay {
   position: absolute;
   inset: 0;
@@ -950,7 +883,6 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .proj-btn:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
 
-/* Infos carte projet */
 .proj-body { padding: 24px; }
 .proj-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
 .proj-tag {
@@ -972,9 +904,7 @@ input, textarea, select { font-family: var(--font-body); }
 }
 .proj-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
 
-/* ====================================================
-   11. CONTACT & FORMULAIRE NETLIFY
-==================================================== */
+/* 11. CONTACT & FORMULAIRE NETLIFY */
 .contact-section { background: var(--bg); }
 
 .contact-layout {
@@ -991,7 +921,6 @@ input, textarea, select { font-family: var(--font-body); }
   margin-bottom: 40px;
 }
 
-/* Liens contact */
 .contact-links { display: flex; flex-direction: column; gap: 12px; }
 
 .contact-link {
@@ -1024,7 +953,6 @@ input, textarea, select { font-family: var(--font-body); }
 .cl-arrow { margin-left: auto; color: var(--text-light); font-size: 0.9rem; transition: transform 0.2s; }
 .contact-link:hover .cl-arrow { transform: translateX(4px); color: var(--accent); }
 
-/* ── Formulaire ──────────────────────────────── */
 .contact-form {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -1084,7 +1012,6 @@ input, textarea, select { font-family: var(--font-body); }
   cursor: pointer;
 }
 
-/* Bouton soumettre */
 .form-submit {
   display: inline-flex;
   align-items: center;
@@ -1110,7 +1037,6 @@ input, textarea, select { font-family: var(--font-body); }
 .submit-arrow { width: 18px; height: 18px; transition: transform 0.2s; }
 .form-submit:hover .submit-arrow { transform: translateX(4px); }
 
-/* Message succès */
 .form-success {
   background: rgba(0, 200, 150, 0.1);
   border: 1px solid rgba(0, 200, 150, 0.3);
@@ -1121,9 +1047,7 @@ input, textarea, select { font-family: var(--font-body); }
   text-align: center;
 }
 
-/* ====================================================
-   12. FOOTER
-==================================================== */
+/* 12. FOOTER */
 .footer {
   background: var(--bg-alt);
   border-top: 1px solid var(--border);
@@ -1150,9 +1074,7 @@ input, textarea, select { font-family: var(--font-body); }
   color: var(--text-muted);
 }
 
-/* ====================================================
-   13. BACK TO TOP
-==================================================== */
+/* 13. BACK TO TOP */
 .back-to-top {
   position: fixed;
   bottom: 32px;
@@ -1176,9 +1098,7 @@ input, textarea, select { font-family: var(--font-body); }
 .back-to-top:hover { background: var(--accent-dark); transform: translateY(-2px); }
 .back-to-top svg { width: 20px; height: 20px; }
 
-/* ====================================================
-   14. ANIMATIONS & UTILITAIRES
-==================================================== */
+/* 14. ANIMATIONS & UTILITAIRES */
 /* Fade up général (utilisé par JS) */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -1207,11 +1127,8 @@ input, textarea, select { font-family: var(--font-body); }
 .reveal:nth-child(5) { transition-delay: 0.33s; }
 .reveal:nth-child(6) { transition-delay: 0.40s; }
 
-/* ====================================================
-   15. RESPONSIVE
-==================================================== */
+/* 15. RESPONSIVE */
 
-/* ── Tablette (≤ 1024px) ────────────────────── */
 @media (max-width: 1024px) {
   :root { --section-gap: 90px; }
 
@@ -1228,16 +1145,13 @@ input, textarea, select { font-family: var(--font-body); }
   .contact-layout { grid-template-columns: 1fr; gap: 48px; }
 }
 
-/* ── Mobile large (≤ 768px) ─────────────────── */
 @media (max-width: 768px) {
   :root { --section-gap: 70px; }
 
-  /* Navbar */
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
 
-  /* Hero */
   .hero { padding: 100px 24px 70px; }
   .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
   .hero-visual { order: -1; }
@@ -1249,21 +1163,16 @@ input, textarea, select { font-family: var(--font-body); }
   .hero-actions { justify-content: center; }
   .lang-strip { justify-content: center; }
 
-  /* Sections */
   .section { padding: var(--section-gap) 24px; }
 
-  /* Projets */
   .projects-grid { grid-template-columns: 1fr; }
 
-  /* Formulaire */
   .form-row { grid-template-columns: 1fr; }
   .contact-form { padding: 28px 20px; }
 
-  /* Footer */
   .footer { padding: 36px 24px; }
 }
 
-/* ── Mobile petit (≤ 480px) ─────────────────── */
 @media (max-width: 480px) {
   .nav-inner { padding: 0 20px; }
   .hero-name { font-size: 2.6rem; }

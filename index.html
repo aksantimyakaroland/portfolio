@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr" data-theme="light">
 <head>
-  <!-- ================================================
-       META & SEO
-  ================================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Roland A. Myaka — Développeur Web Full-Stack, Expert en Intelligence Artificielle et Tuteur d'anglais. Spécialiste React, Node.js, PHP. Disponible en freelance."/>
-  <meta name="keywords" content="développeur web, expert IA, tuteur anglais, React, Node.js, PHP, freelance, portfolio, Roland Myaka"/>
-  <meta name="author" content="Roland A. Myaka"/>
-  <meta property="og:title" content="Roland A. Myaka — Développeur Web & Expert IA"/>
+  <meta name="description" content="Portfolio de Roland Aksanti Myaka, développeur web full-stack et expert en intelligence artificielle basé à Bukavu, RDC. Spécialiste React, Node.js, PHP. Disponible pour missions freelance, intégration IA et tutorat d'anglais."/>
+  <meta name="keywords" content="développeur web, expert IA, tuteur anglais, React, Node.js, PHP, freelance, portfolio, Roland Aksanti Myaka, Bukavu, RDC, full-stack"/>
+  <meta name="author" content="Roland Aksanti Myaka"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+  <link rel="canonical" href="https://rolandmyaka.netlify.app"/>
+  <meta property="og:title" content="Roland Aksanti Myaka — Développeur Web & Expert IA"/>
   <meta property="og:description" content="Développeur Web Full-Stack, Expert IA & Polyglotte. Construisons quelque chose d'extraordinaire ensemble."/>
   <meta property="og:type" content="website"/>
-  <title>Roland A. Myaka — Développeur Web & Expert IA</title>
+  <meta property="og:url" content="https://rolandmyaka.netlify.app"/>
+  <meta property="og:image" content="https://rolandmyaka.netlify.app/images/photo.jpg"/>
+  <meta property="og:site_name" content="Roland Aksanti Myaka — Portfolio"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Roland Aksanti Myaka — Développeur Web & Expert IA"/>
+  <meta name="twitter:description" content="Développeur Web Full-Stack, Expert IA & Polyglotte. Disponible pour missions freelance."/>
+  <meta name="twitter:image" content="https://rolandmyaka.netlify.app/images/photo.jpg"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23007BFF'/><text x='50' y='62' font-family='Poppins,sans-serif' font-size='42' font-weight='700' fill='white' text-anchor='middle'>RM</text></svg>"/>
+  <title>Roland Aksanti Myaka — Développeur Web Full-Stack & Expert IA | Portfolio</title>
 
-  <!-- ================================================
-       GOOGLE FONTS
-       Poppins  → titres (bold, distinctif)
-       DM Sans  → corps de texte (lisible, moderne)
-       JetBrains Mono → code / badges techniques
-  ================================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
 
   <link rel="stylesheet" href="style.css"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Roland Aksanti Myaka",
+    "alternateName": ["Roland Myaka", "Roland A. Myaka", "Roland Aksanti", "Aksanti Myaka", "Roland"],
+    "jobTitle": "Développeur Web Full-Stack, Expert en Intelligence Artificielle",
+    "description": "Développeur web full-stack et expert en IA basé à Bukavu, RDC. Spécialiste React, Node.js, PHP.",
+    "url": "https://rolandmyaka.netlify.app",
+    "image": "https://rolandmyaka.netlify.app/images/photo.jpg",
+    "email": "aksantimyakaroland@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bukavu",
+      "addressCountry": "CD"
+    },
+    "sameAs": [
+      "https://github.com/aksantimyakaroland",
+      "https://linkedin.com/in/roland-aksanti-myaka-4a7a41342",
+      "https://wa.me/243970604954"
+    ],
+    "knowsLanguage": ["fr", "en", "sw", "es"]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- ================================================
-       CURSEUR PERSONNALISÉ (desktop)
-  ================================================ -->
   <div class="cursor"        id="cursor"></div>
   <div class="cursor-trail"  id="cursorTrail"></div>
 
-  <!-- ================================================
-       LOADER PAGE
-  ================================================ -->
   <div class="page-loader" id="pageLoader">
     <div class="loader-box">
       <span class="loader-initials">R<em>.</em>M</span>
@@ -44,9 +65,6 @@
     </div>
   </div>
 
-  <!-- ================================================
-       NAVIGATION
-  ================================================ -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
 
@@ -60,7 +78,6 @@
       </ul>
 
       <div class="nav-right">
-        <!-- ── Toggle Jour / Nuit ────────────────── -->
         <button class="theme-btn" id="themeToggle" aria-label="Basculer le thème">
           <!-- LUNE (affichée en mode clair → click = passer en sombre) -->
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none">
@@ -82,14 +99,12 @@
           </svg>
         </button>
 
-        <!-- Hamburger mobile -->
         <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
-    <!-- Menu mobile overlay -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="#about"    class="mob-link">À propos</a></li>
@@ -100,16 +115,12 @@
     </div>
   </nav>
 
-  <!-- ================================================
-       SECTION 1 — HERO
-  ================================================ -->
   <section class="hero" id="hero">
     <div class="hero-bg-grid"  aria-hidden="true"></div>
     <div class="hero-bg-glow"  aria-hidden="true"></div>
 
     <div class="hero-inner">
 
-      <!-- ── Texte gauche ─────────────────────────── -->
       <div class="hero-text">
 
         <p class="hero-eyebrow">
@@ -118,11 +129,10 @@
         </p>
 
         <h1 class="hero-name">
-          Roland A.<br>
+          Roland Aksanti<br>
           <span class="name-accent">Myaka</span>
         </h1>
 
-        <!-- Typing effect -->
         <div class="hero-typing-wrap">
           <span class="typing-prefix">Je suis&nbsp;</span>
           <span class="typing-word" id="typingWord"></span>
@@ -148,7 +158,6 @@
           <a href="#contact" class="cta-ghost">Me contacter</a>
         </div>
 
-        <!-- Langues -->
         <div class="lang-strip">
           <span class="lang-pill">🇫🇷 Français</span>
           <span class="lang-pill">🇬🇧 English</span>
@@ -157,45 +166,29 @@
         </div>
       </div>
 
-      <!-- ── Photo droite ──────────────────────────── -->
       <div class="hero-visual">
         <div class="avatar-scene">
           <div class="avatar-ring r1"></div>
           <div class="avatar-ring r2"></div>
-          <!--
-            ════════════════════════════════════════════
-            VOTRE PHOTO EST ICI.
-            Pour mettre votre vraie photo :
-              1. Copiez votre image dans le dossier images/
-              2. Renommez-la en "photo.jpg" (ou .png / .webp)
-              3. Remplacez le <img> ci-dessous par :
-                 <img src="images/VOTRE_PHOTO.jpg" alt="Roland A. Myaka" class="avatar-photo"/>
-            ════════════════════════════════════════════
-          -->
           <img
             src="images/photo.jpg"
             alt="Roland A. Myaka — Photo de profil"
             class="avatar-photo"
             loading="eager"
           />
-          <!-- Badges flottants -->
           <div class="float-chip fc-tl">⚡ Dev full-stack</div>
           <div class="float-chip fc-tr">🤖 Expert IA</div>
           <div class="float-chip fc-bl">🌍 4 Langues</div>
         </div>
       </div>
 
-    </div><!-- /hero-inner -->
+    </div>
 
-    <!-- Flèche scroll -->
     <a href="#about" class="scroll-hint" aria-label="Défiler">
       <div class="scroll-wheel"></div>
     </a>
   </section>
 
-  <!-- ================================================
-       SECTION 2 — À PROPOS
-  ================================================ -->
   <section class="section" id="about">
     <div class="container">
 
@@ -206,13 +199,8 @@
 
       <div class="about-layout">
 
-        <!-- Photo about -->
         <div class="about-img-col reveal anim-left">
-          <!--
-            Pour remplacer : <img src="images/about.jpg" alt="Roland au travail" class="about-photo" loading="lazy"/>
-          -->
           <img src="images/photo.jpg" alt="Roland A. Myaka" class="about-photo" loading="lazy"/>
-          <!-- Carte statistiques -->
           <div class="about-stat-card">
             <div class="stat-item">
               <strong>2+</strong>
@@ -231,7 +219,6 @@
           </div>
         </div>
 
-        <!-- Texte about -->
         <div class="about-text-col reveal anim-right">
           <h3 class="about-sub">Développeur. Expert IA. Polyglotte.</h3>
 
@@ -257,7 +244,6 @@
             "Le code est un langage universel.<br/>Moi, j'en parle quatre de plus."
           </blockquote>
 
-          <!-- Timeline carrière -->
           <div class="timeline">
             <div class="tl-item">
               <div class="tl-dot"></div>
@@ -294,9 +280,6 @@
     </div>
   </section>
 
-  <!-- ================================================
-       SECTION 3 — COMPÉTENCES (logos SVG officiels inline)
-  ================================================ -->
   <section class="section skills-section" id="skills">
     <div class="container">
 
@@ -305,10 +288,8 @@
         <h2 class="sec-title">Mon expertise</h2>
       </header>
 
-      <!-- Barres de compétences par catégorie -->
       <div class="skills-cats">
 
-        <!-- FRONTEND -->
         <div class="skill-cat reveal">
           <h3 class="cat-title"><span class="cat-icon">🎨</span> Frontend</h3>
           <div class="skill-bars">
@@ -327,7 +308,6 @@
           </div>
         </div>
 
-        <!-- BACKEND -->
         <div class="skill-cat reveal">
           <h3 class="cat-title"><span class="cat-icon">⚙️</span> Backend</h3>
           <div class="skill-bars">
@@ -350,7 +330,6 @@
           </div>
         </div>
 
-        <!-- IA & OUTILS -->
         <div class="skill-cat reveal">
           <h3 class="cat-title"><span class="cat-icon">🤖</span> IA &amp; Outils</h3>
           <div class="skill-bars">
@@ -373,7 +352,6 @@
           </div>
         </div>
 
-        <!-- LANGUES -->
         <div class="skill-cat reveal">
           <h3 class="cat-title"><span class="cat-icon">🌍</span> Langues &amp; Tutorat</h3>
           <div class="skill-bars">
@@ -392,14 +370,12 @@
           </div>
         </div>
 
-      </div><!-- /skills-cats -->
+      </div>
 
-      <!-- ── Logos officiels SVG inline ─────────────────────────────────── -->
       <div class="tech-logos reveal">
         <p class="tech-logos-title">Technologies maîtrisées</p>
         <div class="logos-grid">
 
-          <!-- HTML5 -->
           <div class="logo-item" title="HTML5">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 3l1.96 22.04L16 28l9.04-2.96L27 3H5z" fill="#E44D26"/>
@@ -410,7 +386,6 @@
             <span>HTML5</span>
           </div>
 
-          <!-- CSS3 -->
           <div class="logo-item" title="CSS3">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 3l1.96 22.04L16 28l9.04-2.96L27 3H5z" fill="#1572B6"/>
@@ -421,7 +396,6 @@
             <span>CSS3</span>
           </div>
 
-          <!-- JavaScript -->
           <div class="logo-item" title="JavaScript">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="32" height="32" rx="4" fill="#F7DF1E"/>
@@ -430,7 +404,6 @@
             <span>JavaScript</span>
           </div>
 
-          <!-- React -->
           <div class="logo-item" title="React">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="16" cy="16" r="2.8" fill="#61DAFB"/>
@@ -441,7 +414,6 @@
             <span>React</span>
           </div>
 
-          <!-- Node.js -->
           <div class="logo-item" title="Node.js">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 3L4 9.5v13L16 29l12-6.5v-13L16 3z" fill="#3C873A"/>
@@ -451,7 +423,6 @@
             <span>Node.js</span>
           </div>
 
-          <!-- PHP -->
           <div class="logo-item" title="PHP">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <ellipse cx="16" cy="16" rx="14" ry="7" fill="#8892BF"/>
@@ -460,7 +431,6 @@
             <span>PHP</span>
           </div>
 
-          <!-- MySQL -->
           <div class="logo-item" title="MySQL">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 4C9.6 4 5 7.58 5 12v8c0 4.42 4.6 8 11 8s11-3.58 11-8v-8c0-4.42-4.6-8-11-8z" fill="#00758F"/>
@@ -470,7 +440,6 @@
             <span>MySQL</span>
           </div>
 
-          <!-- MongoDB -->
           <div class="logo-item" title="MongoDB">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 4c-1.6 4.5-6.5 8-6.5 13.5 0 3.6 2.9 6.5 6.5 6.5s6.5-2.9 6.5-6.5C22.5 12 17.6 8.5 16 4z" fill="#4DB33D"/>
@@ -479,7 +448,6 @@
             <span>MongoDB</span>
           </div>
 
-          <!-- Git -->
           <div class="logo-item" title="Git">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M29.47 14.53L17.47 2.53a1.8 1.8 0 00-2.55 0l-2.54 2.54 3.22 3.22a2.14 2.14 0 012.72 2.72l3.1 3.1a2.14 2.14 0 11-1.29 1.29l-2.9-2.9v7.62a2.14 2.14 0 11-1.76-.08V12.3a2.14 2.14 0 01-1.16-2.8L11.1 6.3 2.53 14.88a1.8 1.8 0 000 2.55l12 12a1.8 1.8 0 002.55 0l12.39-12.39a1.8 1.8 0 000-2.51z" fill="#F05032"/>
@@ -487,7 +455,6 @@
             <span>Git</span>
           </div>
 
-          <!-- GitHub -->
           <div class="logo-item" title="GitHub">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -497,7 +464,6 @@
             <span>GitHub</span>
           </div>
 
-          <!-- Netlify -->
           <div class="logo-item" title="Netlify">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.8 13.6l-1.4-1.4-6.4 6.4 6.4 6.4 1.4-1.4-5-5 5-5z" fill="#05BDBA"/>
@@ -508,7 +474,6 @@
             <span>Netlify</span>
           </div>
 
-          <!-- Vercel -->
           <div class="logo-item" title="Vercel">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 5L29 27H3L16 5z" fill="currentColor"/>
@@ -516,7 +481,6 @@
             <span>Vercel</span>
           </div>
 
-          <!-- ChatGPT -->
           <div class="logo-item" title="ChatGPT">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="16" cy="16" r="13" stroke="#10A37F" stroke-width="1.8"/>
@@ -527,7 +491,6 @@
             <span>ChatGPT</span>
           </div>
 
-          <!-- Claude AI -->
           <div class="logo-item" title="Claude AI">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="16" cy="16" r="13" fill="#CC785C" opacity="0.15"/>
@@ -537,7 +500,6 @@
             <span>Claude AI</span>
           </div>
 
-          <!-- Supabase -->
           <div class="logo-item" title="Supabase">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 3 5 21h10l-1 8 13-18H17l1-8Z" fill="#3ECF8E"/>
@@ -545,7 +507,6 @@
             <span>Supabase</span>
           </div>
 
-          <!-- OpenCode -->
           <div class="logo-item" title="OpenCode">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="32" height="32" rx="6" fill="#6C5CE7"/>
@@ -554,15 +515,12 @@
             <span>OpenCode</span>
           </div>
 
-        </div><!-- /logos-grid -->
-      </div><!-- /tech-logos -->
+        </div>
+      </div>
 
-    </div><!-- /container -->
+    </div>
   </section>
 
-  <!-- ================================================
-       SECTION 4 — PROJETS
-  ================================================ -->
   <section class="section" id="projects">
     <div class="container">
 
@@ -573,7 +531,6 @@
 
       <div class="projects-grid">
 
-        <!-- ── PROJET 1 ─────────────────────────────── -->
         <article class="proj-card reveal">
           <div class="proj-img-wrap">
             <div class="proj-placeholder" style="--ph:#0047AB">
@@ -601,7 +558,6 @@
           </div>
         </article>
 
-        <!-- ── PROJET 2 ─────────────────────────────── -->
         <article class="proj-card reveal">
           <div class="proj-img-wrap">
             <div class="proj-placeholder" style="--ph:#007BFF">
@@ -627,7 +583,6 @@
           </div>
         </article>
 
-        <!-- ── PROJET 3 ─────────────────────────────── -->
         <article class="proj-card reveal">
           <div class="proj-img-wrap">
             <div class="proj-placeholder" style="--ph:#6C63FF">
@@ -654,7 +609,6 @@
           </div>
         </article>
 
-        <!-- ── PROJET 4 ─────────────────────────────── -->
         <article class="proj-card reveal">
           <div class="proj-img-wrap">
             <div class="proj-placeholder" style="--ph:#00C49A">
@@ -681,7 +635,6 @@
           </div>
         </article>
 
-        <!-- ── PROJET 5 ─────────────────────────────── -->
         <article class="proj-card reveal">
           <div class="proj-img-wrap">
             <div class="proj-placeholder" style="--ph:#FF6B6B">
@@ -705,7 +658,6 @@
           </div>
         </article>
 
-        <!-- ── PROJET 6 ─────────────────────────────── -->
         <article class="proj-card reveal">
           <div class="proj-img-wrap">
             <div class="proj-placeholder" style="--ph:#F59E0B">
@@ -731,7 +683,6 @@
           </div>
         </article>
 
-        <!-- ── PROJET 7 ─────────────────────────────── -->
         <article class="proj-card reveal">
           <div class="proj-img-wrap">
             <div class="proj-placeholder" style="--ph:#8B5CF6">
@@ -757,7 +708,6 @@
           </div>
         </article>
 
-        <!-- ── PROJET 8 ─────────────────────────────── -->
         <article class="proj-card reveal">
           <div class="proj-img-wrap">
             <div class="proj-placeholder" style="--ph:#6C5CE7">
@@ -784,13 +734,10 @@
           </div>
         </article>
 
-      </div><!-- /projects-grid -->
+      </div>
     </div>
   </section>
 
-  <!-- ================================================
-       SECTION 5 — CONTACT (formulaire Netlify)
-  ================================================ -->
   <section class="section contact-section" id="contact">
     <div class="container">
 
@@ -801,7 +748,6 @@
 
       <div class="contact-layout">
 
-        <!-- ── Infos contact gauche ─────────────────── -->
         <div class="contact-info reveal anim-left">
           <p class="contact-intro">
             Vous avez un projet web, besoin d'intégrer l'IA dans votre entreprise,
@@ -810,13 +756,6 @@
           </p>
 
           <ul class="contact-links">
-            <!--
-              Remplacez les href par vos vrais liens :
-              • WhatsApp  : https://wa.me/243970604954
-              • LinkedIn  : https://linkedin.com/in/VOTRE_PROFIL
-              • GitHub    : https://github.com/VOTRE_USERNAME
-              • Email     : mailto:aksantimyakaroland@gmail.com
-            -->
             <li>
               <a href="https://wa.me/243970604954" target="_blank" rel="noopener" class="contact-link whatsapp">
                 <span class="cl-icon">
@@ -856,7 +795,6 @@
           </ul>
         </div>
 
-        <!-- ── Formulaire Netlify droite ────────────── -->
         <div class="contact-form-col reveal anim-right">
           <!--
             ════════════════════════════════════════════
@@ -919,20 +857,16 @@
               </svg>
             </button>
 
-            <!-- Message de succès (affiché par JS si besoin) -->
             <div class="form-success" id="formSuccess" style="display:none;">
               ✅ Merci ! Votre message a été envoyé. Je vous réponds sous 24h.
             </div>
           </form>
         </div>
 
-      </div><!-- /contact-layout -->
+      </div>
     </div>
   </section>
 
-  <!-- ================================================
-       FOOTER
-  ================================================ -->
   <footer class="footer">
     <div class="footer-inner">
       <p class="footer-logo">Roland <mark>Aksanti </mark>Myaka</p>
@@ -945,7 +879,6 @@
     </div>
   </footer>
 
-  <!-- Bouton retour en haut -->
   <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
     <svg viewBox="0 0 20 20" fill="none">
       <path d="M10 16V4M4 10l6-6 6 6"

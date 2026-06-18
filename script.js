@@ -1,21 +1,4 @@
-/* ====================================================
-   SCRIPT.JS — Portfolio Roland A. Myaka
-   Modules :
-   1. Loader de page
-   2. Toggle Jour / Nuit (avec localStorage)
-   3. Navbar : scroll + active link + hamburger
-   4. Typing effect Hero
-   5. Animations au scroll (Intersection Observer)
-   6. Barres de compétences animées
-   7. Curseur personnalisé
-   8. Bouton retour en haut
-   9. Année courante footer
-   10. Formulaire contact (feedback visuel)
-==================================================== */
-
-/* ====================================================
-   1. LOADER DE PAGE
-==================================================== */
+/* 1. LOADER DE PAGE */
 window.addEventListener('load', () => {
   const loader = document.getElementById('pageLoader');
   if (!loader) return;
@@ -36,11 +19,9 @@ function initHeroAnimations() {
 }
 
 
-/* ====================================================
-   2. TOGGLE JOUR / NUIT
+/* 2. TOGGLE JOUR / NUIT
    - Mémorisé dans localStorage
-   - Transition fluide via CSS
-==================================================== */
+   - Transition fluide via CSS */
 const themeToggle = document.getElementById('themeToggle');
 const html        = document.documentElement;
 
@@ -59,9 +40,7 @@ if (themeToggle) {
 }
 
 
-/* ====================================================
-   3. NAVBAR — Scroll + liens actifs + menu mobile
-==================================================== */
+/* 3. NAVBAR — Scroll + liens actifs + menu mobile */
 const navbar    = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const mobileMenu= document.getElementById('mobileMenu');
@@ -130,13 +109,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-/* ====================================================
-   4. TYPING EFFECT — Hero
-   Alterne entre les mots définis ci-dessous
-==================================================== */
+/* 4. TYPING EFFECT — Hero
+   Alterne entre les mots définis ci-dessous */
 const typingEl = document.getElementById('typingWord');
 
-// ── Modifiez ce tableau pour changer les mots ──
 const words = [
   'Développeur Web',
   'Expert en IA',
@@ -191,10 +167,8 @@ function typeEffect() {
 setTimeout(typeEffect, 2000);
 
 
-/* ====================================================
-   5. ANIMATIONS AU SCROLL — Intersection Observer
-   Les éléments avec .reveal apparaissent au scroll
-==================================================== */
+/* 5. ANIMATIONS AU SCROLL — Intersection Observer
+   Les éléments avec .reveal apparaissent au scroll */
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, i) => {
@@ -221,10 +195,8 @@ document.querySelectorAll('.reveal').forEach(el => {
 });
 
 
-/* ====================================================
-   6. BARRES DE COMPÉTENCES ANIMÉES
-   Les barres se remplissent quand elles deviennent visibles
-==================================================== */
+/* 6. BARRES DE COMPÉTENCES ANIMÉES
+   Les barres se remplissent quand elles deviennent visibles */
 const barObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
@@ -249,10 +221,8 @@ document.querySelectorAll('.skill-cat').forEach(cat => {
 });
 
 
-/* ====================================================
-   7. CURSEUR PERSONNALISÉ
-   Suit la souris avec un léger lag sur le trail
-==================================================== */
+/* 7. CURSEUR PERSONNALISÉ
+   Suit la souris avec un léger lag sur le trail */
 const cursor      = document.getElementById('cursor');
 const cursorTrail = document.getElementById('cursorTrail');
 
@@ -299,9 +269,7 @@ interactiveEls.forEach(el => {
 });
 
 
-/* ====================================================
-   8. BOUTON RETOUR EN HAUT
-==================================================== */
+/* 8. BOUTON RETOUR EN HAUT */
 const backToTopBtn = document.getElementById('backToTop');
 
 function toggleBackToTop() {
@@ -320,18 +288,14 @@ if (backToTopBtn) {
 }
 
 
-/* ====================================================
-   9. ANNÉE COURANTE — Footer
-==================================================== */
+/* 9. ANNÉE COURANTE — Footer */
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 
-/* ====================================================
-   10. FORMULAIRE CONTACT — Feedback visuel
+/* 10. FORMULAIRE CONTACT — Feedback visuel
    Netlify gère l'envoi réel en production.
-   Ce script ajoute un retour visuel et validation.
-==================================================== */
+   Ce script ajoute un retour visuel et validation. */
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 const submitBtn   = document.getElementById('submitBtn');
@@ -367,10 +331,8 @@ if (contactForm) {
 }
 
 
-/* ====================================================
-   BONUS — Effet parallax léger sur la section Hero
-   Le fond bouge légèrement au scroll pour de la profondeur
-==================================================== */
+/* BONUS — Effet parallax léger sur la section Hero
+   Le fond bouge légèrement au scroll pour de la profondeur */
 const heroBgGrid = document.querySelector('.hero-bg-grid');
 const heroBgGlow = document.querySelector('.hero-bg-glow');
 
